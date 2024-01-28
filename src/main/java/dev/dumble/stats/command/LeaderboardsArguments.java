@@ -14,13 +14,13 @@ public enum LeaderboardsArguments {
 	RESET {
 		@Override
 		public void execute() {
-			PlayerService.getInstance().resetMobKills();
+			PlayerService.getInstance().resetAllMobKills();
 		}
 	},
 	RESET_OTHERS {
 		@Override
 		public void execute() {
-			PlayerService.getInstance().resetMobKills();
+			PlayerService.getInstance().resetMobKills(10);
 		}
 	},
 	SPAWN_MOBS {

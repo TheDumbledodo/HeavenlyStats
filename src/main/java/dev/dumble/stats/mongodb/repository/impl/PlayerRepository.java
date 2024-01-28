@@ -1,10 +1,17 @@
 package dev.dumble.stats.mongodb.repository.impl;
 
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.model.Sorts;
+import com.mongodb.client.model.UpdateOneModel;
+import com.mongodb.client.model.WriteModel;
 import dev.dumble.stats.HeavenlyStats;
 import dev.dumble.stats.model.HeavenlyPlayer;
 import dev.dumble.stats.mongodb.repository.GenericRepository;
 import lombok.Getter;
 import org.bson.Document;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PlayerRepository extends GenericRepository<HeavenlyPlayer> {
 
@@ -25,10 +32,21 @@ public class PlayerRepository extends GenericRepository<HeavenlyPlayer> {
 		return "uniqueId";
 	}
 
-	public void resetMobKills() {
-		Document emptyFilter = new Document();
-		Document document = new Document("mobKills", 0);
+	public void resetMobKills(int fromRank) {
+		FindIterable<Document> sortedDocuments = super.getCollection()
+				.find()
+				.sort(Sorts.descending("mobKills"));
 
-		super.getCollection().updateMany(emptyFilter, document);
+		List<WriteModel<Document>> bulkWrites = new ArrayList<>();
+
+		for (Document document : sortedDocuments) {
+			bulkWrites.add(new UpdateOneModel<>(
+					new Document("_id", document.getObjectId("_id")),
+					new Document("$set", new Document("mobKills", 0))
+			));
+
+			if (bulkWrites.size() >= fromRank) break;
+		}
+		super.getCollection().bulkWrite(bulkWrites);
 	}
 }

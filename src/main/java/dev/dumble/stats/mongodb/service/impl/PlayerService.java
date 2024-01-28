@@ -60,7 +60,11 @@ public class PlayerService implements IGenericService<HeavenlyPlayer> {
 		return repository.retrieve(uniqueId);
 	}
 
-	public void resetMobKills() {
-		repository.resetMobKills();
+	public void resetMobKills(int fromRank) {
+		repository.resetMobKills(fromRank);
+	}
+
+	public void resetAllMobKills() {
+		repository.resetMobKills(0);
 	}
 }
