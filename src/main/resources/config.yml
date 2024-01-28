@@ -1,0 +1,17 @@
+# ┌────────────────────────────────┐
+# │  HeavenlyStats Configuration   │
+# │   Have Feedback? Share It!     │
+# └────────────────────────────────┘
+# Config Version: 0.1
+# GitHub: https://github.com/TheDumbledodo
+
+# Discord: the_dumbledodo
+# Contributors: [ The_Dumbledodo ]
+
+mongo_database:
+
+  name: "heavenly_stats"
+  connection_uri: ""
+
+  collections:
+    players: "heavenly_players"

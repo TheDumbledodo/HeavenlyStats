@@ -1,0 +1,11 @@
+name: ${name}
+version: ${version}
+description: ${description}
+author: The_Dumbledodo
+
+main: ${mainClass}
+
+commands:
+  leaderboards:
+    description: Shows you top ten players with the highest stats as a menu
+    usage: /<command>
