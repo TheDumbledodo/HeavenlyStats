@@ -5,12 +5,14 @@ permissions: [ "heavenly.admin" ]
 
 items:
   '1':
+    type: "ANVIL"
     display_name: "&c&lReset Leaderboards"
     commands: [ "leaderboards reset" ]
     slot: 2
     lores: [ "&eRight Click to reset all players kills." ]
 
   '2':
+    type: "EXPERIENCE_BOTTLE"
     display_name: "&a&lReward All Players"
     commands:
       - "give %heavenly_leaderboards_top_name_1% minecraft:diamond"
@@ -29,6 +31,7 @@ items:
     lores: [ "&eRight Click reward the top ten players and reset others." ]
 
   '3':
+    type: "ENDER_EYE"
     display_name: "&d&lSpawn Mobs"
     commands: [ "leaderboards spawn_mobs" ]
     slot: 6

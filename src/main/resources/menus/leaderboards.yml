@@ -4,41 +4,51 @@ command: [ "stats" ]
 
 items:
   '1':
+    type: "DIAMOND"
     display_name: "&b&l%heavenly_stats_top_name_1% &7#%heavenly_stats_top_value_1%"
     slot: 4
 
   '2':
+    type: "GOLD_INGOT"
     display_name: "&3&l%heavenly_stats_top_name_3% &7#%heavenly_stats_top_value_3%"
     slot: 12
 
   '3':
+    type: "IRON_INGOT"
     display_name: "&9&l%heavenly_stats_top_name_3% &7#%heavenly_stats_top_value_3%"
     slot: 14
 
   '4':
+    type: "COAL_BLOCK"
     display_name: "&8&l%heavenly_stats_top_name_4% &7#%heavenly_stats_top_value_4%"
     slot: 19
   
   '5':
+    type: "COAL_BLOCK"
     display_name: "&8&l%heavenly_stats_top_name_5% &7#%heavenly_stats_top_value_5%"
     slot: 20
     
   '6':
+    type: "COAL_BLOCK"
     display_name: "&8&l%heavenly_stats_top_name_6% &7#%heavenly_stats_top_value_6%"
     slot: 21
     
   '7':
+    type: "COAL"
     display_name: "&8&l%heavenly_stats_top_name_7% &7#%heavenly_stats_top_value_7%"
     slot: 22
     
   '8':
+    type: "COAL"
     display_name: "&8&l%heavenly_stats_top_name_8% &7#%heavenly_stats_top_value_8%"
     slot: 23
     
   '9':
+    type: "COAL"
     display_name: "&8&l%heavenly_stats_top_name_9% &7#%heavenly_stats_top_value_9%"
     slot: 24
     
   '10':
+    type: "COAL"
     display_name: "&8&l%heavenly_stats_top_name_10% &7#%heavenly_stats_top_value_10%"
     slot: 25
