@@ -19,7 +19,7 @@ public class PlayerRepository extends GenericRepository<HeavenlyPlayer> {
 	private final static PlayerRepository instance = new PlayerRepository();
 
 	private PlayerRepository() {
-		super(HeavenlyStats.getConfiguration().getString("mongo_database.collections.players"));
+		super(HeavenlyStats.getConfiguration().get("mongo_database.collections.players"));
 	}
 
 	@Override

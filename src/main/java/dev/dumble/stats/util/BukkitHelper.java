@@ -2,6 +2,7 @@ package dev.dumble.stats.util;
 
 import lombok.experimental.UtilityClass;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 
 import java.util.regex.Pattern;
 
@@ -12,5 +13,9 @@ public class BukkitHelper {
 
 	public String colorize(String message) {
 		return ChatColor.translateAlternateColorCodes('&', message);
+	}
+
+	public void message(CommandSender sender, String message) {
+		sender.sendMessage(BukkitHelper.colorize(message));
 	}
 }

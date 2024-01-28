@@ -19,7 +19,7 @@ public class MongoConnection {
     public MongoClient getMongoClient() {
         if (client != null) return this.client;
 
-        final String uri = HeavenlyStats.getConfiguration().getString("mongo_database.connection_uri");
+        final String uri = HeavenlyStats.getConfiguration().get("mongo_database.connection_uri");
         final ServerApi serverApi = ServerApi.builder()
             .version(ServerApiVersion.V1)
             .build();

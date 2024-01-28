@@ -9,3 +9,7 @@
 # Contributors: [ The_Dumbledodo ]
 
 messages:
+  commands:
+
+    invalid:
+      argument: "&6[&eHeavenly&6] &fThe provided argument is wrong."
