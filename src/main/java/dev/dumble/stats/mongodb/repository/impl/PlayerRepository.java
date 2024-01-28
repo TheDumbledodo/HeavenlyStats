@@ -12,6 +12,8 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 public class PlayerRepository extends GenericRepository<HeavenlyPlayer> {
 
@@ -30,6 +32,25 @@ public class PlayerRepository extends GenericRepository<HeavenlyPlayer> {
 	@Override
 	public String getKeyField() {
 		return "uniqueId";
+	}
+
+	public Optional<HeavenlyPlayer> getPlayerByRank(int rank) {
+		FindIterable<Document> sortedDocuments = super.getCollection()
+				.find()
+				.sort(Sorts.descending("mobKills"));
+
+		FindIterable<Document> documentToRetrieve = sortedDocuments.skip(rank - 1).limit(1);
+
+		for (Document document : documentToRetrieve) {
+			String uniqueId = document.getString("uniqueId");
+
+			return Optional.ofNullable(HeavenlyPlayer.builder()
+					.setName(document.getString("name"))
+					.setUniqueId(UUID.fromString(uniqueId))
+					.setMobKills(document.getInteger("mobKills"))
+					.build());
+		}
+		return Optional.empty();
 	}
 
 	public void resetMobKills(int fromRank) {
