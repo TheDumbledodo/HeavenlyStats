@@ -1,0 +1,23 @@
+title: "&8Admin Menu"
+size: 9
+command: "/adminpanel"
+permissions: [ "heavenly.admin" ]
+
+items:
+  '1':
+    display_name: "&c&lReset Leaderboards"
+    commands: [ "leaderboards reset" ]
+    slot: 2
+    lores: [ "&eRight Click to reset all players kills." ]
+
+  '2':
+    display_name: "&a&lReward All Players"
+    commands: [ "leaderboards reward_players" ]
+    slot: 4
+    lores: [ "&eRight Click reward the top ten players and reset others." ]
+
+  '3':
+    display_name: "&d&lSpawn Mobs"
+    commands: [ "leaderboards spawn_mobs" ]
+    slot: 6
+    lores: [ "&eRight Click to spawn unique mobs for all players." ]
