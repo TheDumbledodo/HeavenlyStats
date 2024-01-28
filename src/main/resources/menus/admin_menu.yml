@@ -1,6 +1,6 @@
 title: "&8Admin Menu"
 size: 9
-command: "/adminpanel"
+command: "adminpanel"
 permissions: [ "heavenly.admin" ]
 
 items:
@@ -12,7 +12,19 @@ items:
 
   '2':
     display_name: "&a&lReward All Players"
-    commands: [ "leaderboards reward_players" ]
+    commands:
+      - "give %heavenly_leaderboards_top_name_1% minecraft:diamond"
+      - "give %heavenly_leaderboards_top_name_2% minecraft:gold_ingot"
+      - "give %heavenly_leaderboards_top_name_3% minecraft:iron_ingot"
+      - "give %heavenly_leaderboards_top_name_4% minecraft:coal"
+      - "give %heavenly_leaderboards_top_name_5% minecraft:coal"
+      - "give %heavenly_leaderboards_top_name_6% minecraft:coal"
+      - "give %heavenly_leaderboards_top_name_7% minecraft:coal"
+      - "give %heavenly_leaderboards_top_name_8% minecraft:coal"
+      - "give %heavenly_leaderboards_top_name_9% minecraft:coal"
+      - "give %heavenly_leaderboards_top_name_10% minecraft:coal"
+      - "leaderboards reset_others"
+
     slot: 4
     lores: [ "&eRight Click reward the top ten players and reset others." ]
 

@@ -4,11 +4,13 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import dev.dumble.stats.model.EntityConverter;
 import dev.dumble.stats.mongodb.MongoManager;
+import lombok.Getter;
 import org.bson.Document;
 
 import java.io.Serializable;
 import java.util.Optional;
 
+@Getter
 public abstract class GenericRepository<T extends EntityConverter> {
 
 	private final MongoCollection<Document> collection;

@@ -1,5 +1,7 @@
 package dev.dumble.stats;
 
+import dev.dumble.stats.command.Leaderboards;
+import dev.dumble.stats.listener.BukkitAdapter;
 import dev.dumble.stats.mongodb.MongoManager;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,5 +22,8 @@ public class HeavenlyStats extends JavaPlugin {
 		HeavenlyStats.setConfiguration(this.getConfig());
 
 		MongoManager.startDatabase();
+
+		this.getServer().getPluginManager().registerEvents(new BukkitAdapter(), this);
+		this.getServer().getPluginCommand("leaderboard").setExecutor(new Leaderboards());
 	}
 }

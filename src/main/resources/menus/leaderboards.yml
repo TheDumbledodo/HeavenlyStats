@@ -1,6 +1,6 @@
 title: "&8Leaderboard"
 size: 27
-command: [ "leaderboards", "stats" ]
+command: [ "stats" ]
 
 items:
   '1':

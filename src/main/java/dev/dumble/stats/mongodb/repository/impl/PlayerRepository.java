@@ -4,6 +4,7 @@ import dev.dumble.stats.HeavenlyStats;
 import dev.dumble.stats.model.HeavenlyPlayer;
 import dev.dumble.stats.mongodb.repository.GenericRepository;
 import lombok.Getter;
+import org.bson.Document;
 
 public class PlayerRepository extends GenericRepository<HeavenlyPlayer> {
 
@@ -22,5 +23,12 @@ public class PlayerRepository extends GenericRepository<HeavenlyPlayer> {
 	@Override
 	public String getKeyField() {
 		return "uniqueId";
+	}
+
+	public void resetMobKills() {
+		Document emptyFilter = new Document();
+		Document document = new Document("mobKills", 0);
+
+		super.getCollection().updateMany(emptyFilter, document);
 	}
 }
